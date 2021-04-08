@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskvote</title>
+    <style>
+        html,body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    
+    <!-- ============ bootstrap ============ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- ============ font awesome ============ -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+<body>
+    <noscript>
+        <p>本頁面需要瀏覽器支持（啟用）JavaScript</p>
+    </noscript>
+    <div id="sizer">
+        <div class="d-block d-sm-none d-md-none d-lg-none d-xl-none" data-size="xs"></div>
+        <div class="d-none d-sm-block d-md-none d-lg-none d-xl-none" data-size="sm"></div>
+        <div class="d-none d-sm-none d-md-block d-lg-none d-xl-none" data-size="md"></div>
+        <div class="d-none d-sm-none d-md-none d-lg-block d-xl-none" data-size="lg"></div>
+        <div class="d-none d-sm-none d-md-none d-lg-none d-xl-block" data-size="xl"></div>
+    </div>
+    <!-- ================ Navbar ================= -->
+    <nav id="navbar1" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">TaskVote</a>
+        <!-- =====Center===== -->
+        <a id="aOpenModalShopcart" href="#" class="navbar-brand mx-auto text-center d-lg-none">
+            <span class="fa-stack">
+                <i class="fas fa-shopping-cart" data-count="99"></i>
+                <span class="numberBadge nbg1" data-testid="spanNumberBadge1">99</span>
+            </span>
+            <!-- <span class="fa-stack fa-1x d-lg-none">
+                <i class="fa fa-shopping-cart fa-stack-2x"></i>
+                <span class="fa-stack-1x numberBadge">99</span>
+            </span> -->
+            <!-- <i class="fas fa-shopping-cart d-lg-none" data-count="99"></i> -->
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#divMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ================ menu ================= -->
+        <!-- <button class="btn btn-primary" data-target="#divMenu" data-toggle="collapse" aria-expanded="false"
+            aria-controls="divMenu">Text</button> -->
+
+
+        <div class="collapse navbar-collapse" id="divMenu">
+            <!-- <a href="#" class="navbar-brand">Hidden Brand</a> -->
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+                <li class="nav-item">
+                    <a href="#history" class="nav-link" data-testid="navitemHistory">Task Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#news" class="nav-link" data-testid="navitemNews">Task Evaluation</a>
+                </li>
+                <li class="nav-item" id="liOrderProducts">
+                    <a href="#page-react" class="nav-link" id="aOrderProducts" data-testid="navitemOrderProducts">Task Acception</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#qanda" class="nav-link" data-testid="navitemQandA">Personal Tasks</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contactus" class="nav-link" data-testid="navitemContactus">X</a>
+                </li>
+                <!-- ========== test =========== -->
+                <!-- <li class="nav-item dropdown d-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Test
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a id="aTestLogin" class="dropdown-item" href="#">login</a>
+                        <a id="aTestLogout" class="dropdown-item" href="#">logout</a>
+                        <a id="aTemp" class="dropdown-item" href="#">Temp</a>
+                        
+                    </div>
+                </li>
+                <li class="nav-item d-none">
+                    <button id="btnstatic">static</button>
+                    <button id="btnreact">react</button>
+                </li> -->
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <!-- ========= LOGIN BUTTON =========== -->
+                <li class="nav-item" id="liLogin">
+                    <a class="nav-link" href="#" data-testid="btnLogin"><i class="fas fa-user"></i>登入</a>
+                </li>
+                <li class="nav-item dropdown displayNone" id="liUserDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <!-- ========= USER EMAIL DISPLAY =========== -->
+                        <i class="fas fa-user"></i><span id="spanDisplayEmail" data-testid="spanDisplayEmail">tristan829@gmail.com</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item d-none" id="aMyOrder" data-testid="aMyOrder" href="#">我的訂單</a>
+                        <a class="dropdown-item" id="aMyProfile" data-testid="aMyProfile" href="#">個人資料</a>
+                        <!-- <a class="dropdown-item" id="aChangePWD" href="#">修改密碼</a> -->
+                        <a class="dropdown-item" id="aLogout" data-testid="aLogout" href="#">登出</a>
+                    </div>
+                </li>
+                <li class="nav-item d-none d-lg-inline" id="liOpenModalShopcart">
+                    <span class="nav-link" href="#ThisIsNotATag">
+                        <!-- <span class="fa-stack fa-xs">
+                            <i class="fas fa-shopping-cart fa-stack-2x" data-count="99"></i>
+                        </span> -->
+                        <style>
+                            .displayInline {
+                                display: inline;
+                                margin-right: 10px;
+                            }
+                        </style>
+                        <!-- https://stackoverflow.com/questions/9067892/how-to-align-two-elements-on-the-same-line-without-changing-html -->
+                        <!-- <i class="fas fa-shopping-cart" data-count="99"></i> -->
+                        <span style="color: yellow;">
+                            <i class="fas fa-star" ></i>
+                            <span>97</span>
+                        </span>
+                        
+                        <span class="fa-stack displayInline d-none">
+                            <i class="fas fa-shopping-cart fa-stack-1x" data-count="99"></i>
+                            <span class="numberBadge nbg2" data-testid="spanNumberBadge2">
+                                99
+                            </span>
+                        </span>
+                        <span class="displayInline d-none" id="spanShopCart2">X</span>
+                        <!-- <i class="fas fa-shopping-cart" data-count="99"></i> -->
+
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- =========== REACT ============== -->
+    <div id="root"></div>
+    <!-- <div id="page-static"></div>
+    <div id="page-react"></div> -->
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+@use '../styles/base/base.scss';
+@use './bd.scss';
+//@use '../../webcomponents/cusFullPageScroll/fullPageScroll.scss';
+
+$colorRoyalBlue:base.$colorRoyalBlue;
+$colorWhite:base.$colorWhite;
+
+html,
+body {
+    height: 100%;
+    // overflow-y: hidden;
+    scroll-behavior: smooth;
+    overflow: hidden; /* Hide scrollbars */
+}
+*{
+    scroll-behavior: smooth;
+}
+.navbar-custom {
+    background-color: #fbd915;
+}
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: green;
+}
+
+.BodySetting {
+    background-color: $colorRoyalBlue;
+    color: $colorWhite;
+}
+
+/* .bgBlack {
+    background-color: black;
+} */
+
+.bd-primary {
+    border: 5px solid rgb(62, 95, 241);
+}
+
+.colorBlack {
+    color: black;
+}
+
+.displayNone {
+    display: none;
+}
+
+.numberBadge {
+    background-color: red;
+    color: white;
+    position: relative;
+    border-radius: 50%;
+    padding: .4em;
+    margin: 0px;
+    font-size: 50%;
+    line-height: .9em;
+    text-align: center;
+    /* display: inline-block; */
+    font-weight: bold;
+    /* content: attr(data-count); */
+    /* span width失效 */
+    /* min-width: 2em;
+    min-height: 2em; */
+}
+
+.nbg1 {
+    top: -1em;
+    left: -1.4em;
+}
+.numberBadge, #spanShopCart2, .fa-shopping-cart{
+    cursor: pointer;
+}
+
+.nbg2 {
+    /* top: -4em;
+    left: 1em; */
+    top: -1em;
+    left: 1.4em;
+
+}
+
+/* .fa-stack{
+    width: 3em;
+    padding: 0px;
+    margin: 0px;
+} */
+
+/* .fa-shopping-cart[data-count]:after {
+    position: relative;
+    right: 6px;
+    top: -12px;
+    content: attr(data-count);
+    font-size: 50%;
+    padding: .5em;
+    border-radius: 50%;
+    line-height: .75em;
+    color: white;
+    background: rgba(255, 0, 0, .85);
+    text-align: center;
+    display: inline-block;
+    min-width: 2em;
+    min-height: 2em;
+    font-weight: bold;
+} */
+
+
+:root {
+    --index-bodyBox-mt: 64px;
+}
+
+
+.bodyBox {
+    width: 100vw;
+    
+    height: calc(100vh - var(--index-bodyBox-mt));
+    margin-top: var(--index-bodyBox-mt);
+
+    display: flex;
+    padding: 10px;
+
+    @extend .bd1;
+    // justify-content: center;
+    // align-items: center;
+
+    .leftMenu {
+        //display: inline-block;
+        //margin:5px; 
+        height: 100%;
+        width: 280px;
+        //float: left;
+    }
+    .centerBox {
+        //margin:5px;
+        //display: inline-block;
+        height: 100%;
+        width: 100%;
+        //margin-left: 200px;
+        flex-grow: 1;
+    }
+
+    .iframeRules{
+        width: 100%;
+        height: 86vh;
+    }
+}
+
+.subContentBox{
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    .leftMenu {
+        //display: inline-block;
+        //margin:5px; 
+        overflow:auto;
+        height: 100%;
+        width: 400px;
+        //float: left;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .selected{
+            background-color: rgb(0, 69, 97);
+        }
+    }
+    .centerBox {
+        //margin:5px;
+        //display: inline-block;
+        height: 100%;
+        width: 100%;
+        //margin-left: 200px;
+        flex-grow: 1;
+
+        overflow:auto;
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
+    }
+}
+
+.meetingCard{
+    .fa-save, .fa-edit, .fa-undo, .fa-trash-alt{
+        font-size: 2rem; color: orange;
+    }
+    
+}
+.taskInfoCard{
+    .fa-save, .fa-edit, .fa-undo, .fa-trash-alt{
+        font-size: 2rem; color: orange;
+    }
+    .fa-calendar-check{
+        font-size: 2rem; color: rgb(235, 74, 216);//lime;
+    }
+    .fa-hand-point-up{
+        font-size: 2rem; color: rgb(235, 74, 216);
+    }
+    .iconLightBlue{
+        font-size: 2rem; color: rgb(63, 230, 221);
+    }
+    .iconGray{
+        font-size: 2rem; color: rgb(95, 95, 95);
+    }
+    .targetHours{
+        color: rgb(235, 74, 216);
+        font-weight: 600;
+    }
+
+
+    .colorRed{
+        color:red;
+    }
+}
+
+.taskCardContainer{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+// .MuiRating-root{
+//     background-color: gray;
+//     color: gray;
+// }
+.MuiRating-iconEmpty{
+    opacity: 0.4;
+}
+// .MuiRating-icon{
+//     color: red;
+// }
+// .MuiSvgIcon-root{
+// color: khaki;
+// }
+.MuiSvgIcon-fontSizeInherit{
+    color: red;
+}
+
+// .MuiRating-iconFilled{
+
+// }
+.MuiSlider-markLabel, .MuiSlider-markLabelActive{
+    opacity: 1;
+    color: white;
+}
